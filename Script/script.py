@@ -1,42 +1,28 @@
-class script(object):
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-    START_MSG = """👋 Hello {}!
+class script:
+    START_TXT = "Hi {}, I am Auto Rename Bot.\nSend me any file and I will rename it for you!"
+    HELP_TXT = "Send any file to rename.\nUse buttons to set format or mode.\nJoin update channel to use this bot."
+    ABOUT_TXT = "🤖 Bot: Auto Rename Bot\n👨‍💻 Dev: @YourUsername\n📦 Library: Pyrogram\n🗄️ Language: Python"
 
-I'm a File Renamer Bot with features like:
-➤ Rename Files
-➤ Upload as Video or Document
-➤ Custom Thumbnail Support
+    START_BUTTONS = InlineKeyboardMarkup([
+        [InlineKeyboardButton("Set Media Format", callback_data="media")],
+        [InlineKeyboardButton("Help", callback_data="help"), InlineKeyboardButton("About", callback_data="about")],
+    ])
 
-Just send me a file to get started!
-"""
+    HELP_BUTTONS = InlineKeyboardMarkup([
+        [InlineKeyboardButton("Back", callback_data="start")],
+        [InlineKeyboardButton("Close", callback_data="close")],
+    ])
 
-    HELP_MSG = """🛠 **How to Use Me:**
+    ABOUT_BUTTONS = InlineKeyboardMarkup([
+        [InlineKeyboardButton("Back", callback_data="start")],
+        [InlineKeyboardButton("Close", callback_data="close")],
+    ])
 
-1. Send me any file.
-2. I’ll ask you for a new file name.
-3. Choose how you want to upload:
-   ➤ As Document
-   ➤ As Video
-   ➤ Or Cancel
-
-📌 **Commands:**
-/start – Restart the bot  
-/help – Show this help  
-/about – Bot information  
-"""
-
-    ABOUT_MSG = """📖 **About This Bot:**
-
-🤖 **Bot Name:** File Renamer Bot  
-👨‍💻 **Developer:** [YourNameHere](https://t.me/YourUsername)  
-📚 **Library:** Pyrogram  
-💻 **Language:** Python 3  
-🗃 **Features:** Rename | Convert | Custom Thumbnails  
-"""
-
-    # Optional keyboard button text layout, if you're using inline buttons
-    BUTTONS = {
-        "start": [["Help", "About"]],
-        "help": [["Back", "About"]],
-        "about": [["Back", "Help"]]
-    }
+    MEDIA_BUTTONS = InlineKeyboardMarkup([
+        [InlineKeyboardButton("Document", callback_data="set_doc"),
+         InlineKeyboardButton("Video", callback_data="set_vid"),
+         InlineKeyboardButton("Audio", callback_data="set_aud")],
+        [InlineKeyboardButton("Back", callback_data="start")],
+    ])
