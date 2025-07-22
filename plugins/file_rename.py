@@ -4,7 +4,7 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from helper.database import codeflixbots
-from helper.utils import get_file_name, progress_for_pyrogram
+from helper.utils import progress_for_pyrogram
 
 @Client.on_message(filters.private & filters.media)
 async def rename_file(client: Client, message: Message):
