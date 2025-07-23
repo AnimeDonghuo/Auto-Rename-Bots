@@ -1,6 +1,8 @@
+# Script/script.py
+
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
-class script:
+class Script:
     START_TXT = "Hi {}, I am Auto Rename Bot.\nSend me any file and I will rename it for you!"
     HELP_TXT = "Send any file to rename.\nUse buttons to set format or mode.\nJoin update channel to use this bot."
     ABOUT_TXT = "🤖 Bot: Auto Rename Bot\n👨‍💻 Dev: @YourUsername\n📦 Library: Pyrogram\n🗄️ Language: Python"
