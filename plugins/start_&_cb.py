@@ -18,8 +18,8 @@ async def start(client: Client, message: Message):
     )
 
     await message.reply_text(
-        text=script.START_TXT.format(user.mention),
-        reply_markup=reply_markup,
+        text = Script.START_TXT.format(user.mention),
+        reply_markup = Script.START_BUTTONS,
         disable_web_page_preview=True
     )
 
