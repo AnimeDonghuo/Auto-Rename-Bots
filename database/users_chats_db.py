@@ -1,7 +1,7 @@
 import pymongo
-from config import MONGODB_URI
+from config import DB_URL
 
-client = pymongo.MongoClient(MONGODB_URI)
+client = pymongo.MongoClient(DB_URL)
 db = client['AutoRenameBot']
 users_collection = db['users']
 
