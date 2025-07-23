@@ -1,7 +1,11 @@
 # /database/users_chats_db.py
 
 from motor.motor_asyncio import AsyncIOMotorClient
-from config import MONGODB_URI, DB_NAME
+from config import Config
+
+# MongoDB config
+MONGODB_URI = Config.MONGODB_URI
+DB_NAME = Config.DB_NAME
 
 # MongoDB client setup
 client = AsyncIOMotorClient(MONGODB_URI)
